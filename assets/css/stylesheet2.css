@@ -1,0 +1,83 @@
+:root {
+    --thistlegreen: #bcc69d;
+    --ferngreen: #4f753d;
+}
+
+* {
+    margin: 0px;
+    padding: 2px;
+}
+
+header {
+    display: block;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    background-color: var(--ferngreen);
+}
+
+h1 {
+    display: flex;
+    justify-content: flex-end;
+    color: var(--thistlegreen);
+    font-size: 20px;
+    font-family: 'Patua One,' cursive;
+}
+
+body {
+    background-color: cornsilk;
+}
+
+.top-text {
+    text-align: center;
+    font-family: 'Laila', sans-serif;
+    font-size: 45px;
+    line-height: 0;
+    color: var(--ferngreen);
+}
+
+#drink-reco {
+    height: 400px;
+    width: 375px;
+    background-color: var(--thistlegreen);
+}
+
+#drink-name {
+    font-family: 'Laila', sans-serif;
+    font-size: 45px;
+    text-align: start;
+}
+
+#drink-description {
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Laila', sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+#drink-image {
+    display: flex;
+    justify-content: flex-end;
+    height: 60px;
+    width: 60px;
+}
+
+#seemore {
+    display: flex;
+    justify-content: flex-end;
+    width: 65px;
+    height: 45px;
+    background-color: var(--ferngreen);
+    color: var(--thistlegreen);
+    
+}
+
+#change-selection {
+    display: flex;
+    justify-content: flex-start;
+    width: 65px;
+    height: 45px;
+    background-color: var(--ferngreen);
+    color: var(--thistlegreen);
+}

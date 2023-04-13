@@ -3,6 +3,11 @@
     --ferngreen: #4f753d;
 }
 
+* {
+    margin: 0px;
+    padding: 2px;
+}
+
 body {
     background-color: cornsilk;
 }
@@ -10,22 +15,23 @@ body {
 header {
     display: block;
     width: 100%;
-    height: 175px;
+    height: 100px;
     align-items: center;
     background-color: var(--ferngreen);
 }
 
 h1 {
-    text-align: center;
+    display: flex;
+    justify-content: flex-end;
     color: var(--thistlegreen);
-    font-size: 45px;
+    font-size: 20px;
     font-family: 'Patua One,' cursive;
 }
 
 .headertext {
     text-align: center;
     font-family: 'Laila', sans-serif;
-    font-size: 20px;
+    font-size: 45px;
     line-height: 0;
     color: var(--thistlegreen);
 }
