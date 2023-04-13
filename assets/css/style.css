@@ -1,0 +1,84 @@
+:root {
+    --thistlegreen: #bcc69d;
+    --ferngreen: #4f753d;
+}
+
+body {
+    background-color: cornsilk;
+}
+
+header {
+    display: block;
+    width: 100%;
+    height: 175px;
+    align-items: center;
+    background-color: var(--ferngreen);
+}
+
+h1 {
+    text-align: center;
+    color: var(--thistlegreen);
+    font-size: 45px;
+    font-family: 'Patua One,' cursive;
+}
+
+.headertext {
+    text-align: center;
+    font-family: 'Laila', sans-serif;
+    font-size: 20px;
+    line-height: 0;
+    color: var(--thistlegreen);
+}
+
+.main {
+    height: 845px;
+    display: flex;
+    justify-content: center;
+}
+
+.type-h2 {
+    display: inline-flex;
+    justify-content: center;
+    font-family: 'Patua One,' cursive;
+    font-size: 30px;
+    color: var(--ferngreen);
+}
+
+.selector {
+    display: inline-block;
+    align-items: center;
+}
+
+.option {
+    display: flex;
+    justify-content: center;
+    border-radius: 3px;
+    border: solid 3px darkgray;
+    background-color: var(--thistlegreen);
+    color: var(--ferngreen);
+    font-family: 'Laila', sans-serif;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.submitBtn {
+    display: flex;
+    justify-content: center;
+    border-radius: 3px;
+    border: solid 3px darkgray;
+    background-color: var(--ferngreen);
+    color: var(--thistlegreen);
+}
+
+footer {
+    width: 100%;
+    height: 75px;
+    background-color: var(--ferngreen);
+    color: var(--thistlegreen);
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Laila', sans-serif;
+}
