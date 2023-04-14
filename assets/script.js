@@ -57,32 +57,31 @@ $(document).ready(function(){
             //runs a function for each variable in the data.drinks array 
             //creates a link item for each drink name and adds an href that goes to the description page
             data.drinks.forEach(function(drink){
-                var drinkLink = $("<a>");
-                drinkLink.href = "description.html?id=" + drink.idDrink;
-                drinkLink.text(drink.strDrink);
-                resultsList.append(drinkLink)
+                var drinkElement = $("<div>").addClass("recommendation").text(drink.strDrink);
+                drinkElement.data("id", drink.idDrink);
+                resultsList.append(drinkElement);
             });
         });
     }
-
-    function handleRecommandationClick(event) {
-        event.preventDefault();
-        var drinkId = $(this).data("drink-id");
-
+     //grabs any item under the class recommendation and then changes the page when clicked and runs the displayDescription() for that specifc drink
+    $(".recommendation").on("click", function() {
+        var drinkId = $(this).data("id");
+        $("#results-page").hide();
+        $("#description-page").show();
         displayDescription(drinkId);
-    }
+    })
      
     //back button for going back to the search page 
     resultsBackButton.on("click", function() {
-        $("results-page").hide();
-        $("search-page").show();
+        $("#results-page").hide();
+        $("#search-page").show();
     })
 
     //grabs HTML elements for description page
     var drinkTitle = $("#drink-title");
     var drinkImg = $("#drink-img");
     var drinkInstructions = $("#drink-instructions");
-    var youtubeList = $("youtube-list");
+    var youtubeList = $("#youtube-list");
     var descriptionBackButton = $("#description-back-button");
     //api urls for fetching and api key
     var drinkApiUrl = "https://www.cocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkId;
@@ -143,12 +142,12 @@ $(document).ready(function(){
                     youtubeList.append(videoItem)
                 });
             });
-        }
+        });
         //back button to switch from description page to results page
         descriptionBackButton.on("click", function() {
             $("description-page").hide();
             $("results-page").show();
         });
-    });
+    }
 });
 
