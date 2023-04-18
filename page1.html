@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>ThirstTrap</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300&family=Patua+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href='./assets/css/style.css'>
+  <link rel="stylesheet" href='/assets/css/style.css'>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -17,7 +17,15 @@
   </header>
   <main class="main">
     <form class="selector">
-      <label for="alcohol-type" class="type-h2">Alcohol Type:</label>
+      <!-- MC: updated options to match what's in API -->
+      <label for="alcohol-select" class="type-h2">Alcohol Type:</label>
+      <select id="alcohol-select" class="dropdown">
+        <option value="Alcoholic" class="option">Alcoholic</option>
+        <option value="Non-Alcoholic" class="option">Non-Alcoholic</option>
+      </select>
+      <br>
+      <!-- MC: changed to spirit instead of flavor -->
+      <label for="alcohol-type" class="type-h2">Spirit:</label>
       <select id="alcohol-type" class="dropdown">
         <option value="vodka" class="option">Vodka</option>
         <option value="gin" class="option">Gin</option>
@@ -26,39 +34,33 @@
         <option value="whiskey" class="option">Whiskey</option>
         <option value="beer" class="option">Beer</option>
         <option value="wine" class="option">Wine</option>
-        <option value="non-alcoholic" class="option">Non-Alcoholic</option>
       </select>
       <br>
-
-      <label for="flavor-type" class="type-h2">Flavor Type:</label>
-      <select id="flavor-type" class="dropdown">
-        <option value="sweet" class="option">Sweet</option>
-        <option value="sour" class="option">Sour</option>
-        <option value="bitter" class="option">Bitter</option>
-        <option value="spicy" class="option">Spicy</option>
-        <option value="fruity" class="option">Fruity</option>
-        <option value="herbal" class="option">Herbal</option>
-        <option value="smoky" class="option">Smoky</option>
-        <option value="savory" class="option">Savory</option>
+      <!-- MC: changed to category instead of glass -->
+      <label for="category-select" class="type-h2">Category:</label>
+      <select id="category-select" class="dropdown">
+        <option value="Ordinary_Drink" class="option">Ordinary Drink</option>
+        <option value="Cocktail" class="option">Cocktail</option>
+        <option value="Shot" class="option">Shot</option>
+        <option value="Beer" class="option">Beer</option>
+        <option value="Other/Unknown" class="option">Other/Unknown</option>
+        <option value="Punch/Party_Drink" class="option">Punch/Party Drink</option>
+        <option value="Homemade_Liqueuer" class="option">Homemade Liqueuer</option>
+        <option value="Soft_Drink/Soda" class="option">Soft Drink/Soda</option>
       </select>
       <br>
-
-      <label for="glass-type" class="type-h2">Glass Type:</label>
-      <select id="glass-type class="dropdown">
-        <option value="highball" class="option">Highball</option>
-        <option value="martini" class="option">Martini</option>
-        <option value="pint" class="option">Pint</option>
-        <option value="snifter" class="option">Snifter</option>
-        <option value="wine-glass" class="option">Wine Glass</option>
-        <option value="shot-glass" class="option">Shot Glass</option>
-      </select>
-      <br>
-
-        <input type="submit" value="Submit">
+      <button id="search-btn">Search</button>
       </form>
-    </main>
-    <footer>
-      <p>&copy; 2023 Drink Selector. All rights reserved.</p>
-    </footer>
-  </body>
+    <!-- MC: added HTML2 to HTML1 -->
+    <div id="drink-reco" class="hidden">
+      <h2 id="drink-name"></h2>
+      <p id="drink-description"></p>
+      <img id="drink-image"/>
+      <button id="change-selection" class="hidden">Change Selection</button>
+      <button id="see-more" class="hidden">See More</button>
+    </div>
+  </main>     
+  <!-- MC: reference to updated js script -->
+  <script src="/assets/mcscript.js"></script>
+</body>
 </html>

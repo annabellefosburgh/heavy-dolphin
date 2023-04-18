@@ -16,8 +16,8 @@ header {
     display: block;
     width: 100%;
     height: 130px;
-    align-items: center;
     background-color: var(--ferngreen);
+    text-align: center;
 }
 
 h1 {
@@ -70,12 +70,78 @@ h1 {
     display: inline-block;
 }
 
-.submitBtn {
+.hidden {
+    display: none;
+  }
+
+/* added to-margin */
+#search-btn {
     display: flex;
     justify-content: center;
     font-size: 1.5em;
     background-color: var(--ferngreen);
     color: var(--thistlegreen);
+    margin-top: 20px;
+}
+
+/* stylesheet2.css */
+.top-text {
+    text-align: center;
+    font-family: 'Laila', sans-serif;
+    font-size: 45px;
+    line-height: 0;
+    color: #bcc69d;
+}
+
+/* added padding */
+#drink-reco {
+    /* margin-left: 20%; */
+    height: 500px;
+    width: 875px;
+    background-color: #bcc69d;
+    padding: 40px;
+}
+
+#drink-name {
+    font-family: 'Laila', sans-serif;
+    font-size: 45px;
+    text-align: start;
+}
+
+#drink-description {
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Laila', sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* updated height and width, added top-margin*/
+#drink-image {
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    height: 200px;
+    width: 200px;
+    margin-top: 20px;
+}
+
+#see-more {
+    display: inline-flex;
+    /* margin-left: 100%; */
+    font-size: 1em;
+    background-color: #4f753d;
+    color: #bcc69d;
+}
+
+/* added top-margin, font-size */
+#change-selection {
+    display: inline-flex;
+    justify-self: first baseline;
+    background-color: #4f753d;
+    color: #bcc69d;
+    margin-top: 20px;
+    font-size: 1em;
 }
 
 footer {
