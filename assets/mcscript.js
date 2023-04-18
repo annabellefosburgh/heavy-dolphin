@@ -75,11 +75,8 @@ function displayDrink(drink) {
 }
 });
 
-  //grabs button from HTML
-var seeMoreBtn = $("#see-more-button");
-
 //event listener for function to show youtube video
-seeMoreBtn.addEventListener("click", searchVideo);
+seeMore.addEventListener("click", searchVideo);
 
 function searchVideo() {
     //variables such as APIs drink name and search parameters
