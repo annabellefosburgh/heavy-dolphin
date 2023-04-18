@@ -6,9 +6,6 @@ $(document).ready(function() {
   var categorySelect = $("#category-select");
   var changeSelection = $("#change-selection");
   var seeMore = $("#see-more");
-  var backButton = $("#description-back-button");
-  var resultsBackButton = $("#results-back-button")
-  var resultsList = $("#results-list")
 
   //event listener for search button
   searchBtn.on("click", function(event) {
@@ -36,6 +33,7 @@ $(document).ready(function() {
         return response.json();
       })
       .then(data => {
+        console.log(data);
         if (data.drinks && data.drinks.length > 0) {
           var drink = data.drinks[Math.floor(Math.random() * data.drinks.length)];
           fetchDrinkById(drink.idDrink);
@@ -71,38 +69,38 @@ function displayDrink(drink) {
   // Show "Change Selection" and "See More" buttons only after the drink is displayed
   changeSelection.removeClass("hidden");
   seeMore.removeClass("hidden");
+
 }
 
 //event listener for function to show youtube video
-$("#see-more").on("click", function(drink) {
-    //variables such as APIs drink name and search parameters
-    var drinkName = drink.strDrink;
-    var searchQuery = drinkName + "drink";
-    var youtubeApiKey = "AIzaSyDdGH2yyQR0S7ds9kWXfv5MZx1WefCuv6E";
-    var youtubeApi = "https://www.googleapis.com/youtube/v3/search";
-    //grabs a video based off searchQuery value and provides one result
-    var params = new URLSearchParams({
-      key: youtubeApiKey,
-      q: searchQuery,
-      type: "video",
-      maxResults: 1,
-    });
-    var Url = youtubeApi + "?" + params;
+$("#see-more").on("click", function() {
+  //variables grabs drink name text and adds drink to specify search and API URL parameters
+  drinkName = $("#drink-name").text()
+  var searchQuery = drinkName + "drink";
+  var youtubeApiKey = "AIzaSyDdGH2yyQR0S7ds9kWXfv5MZx1WefCuv6E";
+  var youtubeApi = "https://www.googleapis.com/youtube/v3/search?";
+  //grabs a video based off searchQuery value and provides one result
+  var Url = youtubeApi + "part=snippet&maxResults=1&q=" + searchQuery + "&type=video&key=" + youtubeApiKey;
 
-    fetch(Url) 
-    .then(function(response) {
-        //checks if response is ok and changes response to json
-        if (!response.ok) {
-            throw response.json();
-        }
-        return response.json();
-    }).then(function(data) {
-        //grabs first video and then plays that video in a new window
-        var video = data.items[0].id.videoId;
-        var videoUrl = "https://www.youtube.com/watch?v=" + video;
+  fetch(Url) 
+  .then(function(response) {
+      //checks if response is ok and changes response to json
+      if (!response.ok) {
+          throw response.json();
+      }
+      return response.json();
+  }).then(function(data) {
+      //grabs first video and then plays that video in a new window
+      var video = data.items[0].id.videoId;
+      var videoUrl = "https://www.youtube.com/watch?v=" + video;
 
-        window.open(videoUrl)
-    });
+      window.open(videoUrl)
+  });
+});
+
+$("#change-selection").on("click", function() {
+  $("#drink-reco").addClass("hidden");
+  $(".selector").show();
 });
 });
 
