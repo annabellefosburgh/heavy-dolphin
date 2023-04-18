@@ -1,6 +1,6 @@
-//waits for everything to render before running the page
+// waits for everything to render before running the page
 $(document).ready(function() {
-    //grabs HTML elements
+    // grabs HTML elements
     var searchBtn = $("#search-btn");
     var alcoholSelect = $("#alcohol-select");
     var spiritSelect = $("#alcohol-type");
@@ -16,27 +16,27 @@ $(document).ready(function() {
     var drinkApiUrl;
     var drinkId;
 
-  //event listener for search button
+  // event listener for search button
     searchBtn.on("click", function(event) {
       event.preventDefault();
 
-      //grabs the value selected from the drop down menu
+      // grabs the value selected from the drop down menu
       var alcohol = alcoholSelect.val();
       var spirit = spiritSelect.val();
       var category = categorySelect.val();
         //runs the fetchDrinks function with the values from the drop down menus
       fetchDrinks(alcohol, spirit, category);
 
-      //hides the search page and shows the recommendations page
+      // hides the search page and shows the recommendations page
       $("#results-page").show();
       $("#search-page").hide();
     });
 
-    //function that fetches drinks from API using the selected values
+    // function that fetches drinks from API using the selected values
     function fetchDrinks(alcohol, spirit, category) {
         //creates the URL to the API
       var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?";
-        //checks if the alcohol value is not empty and adds it to the URL
+        // checks if the alcohol value is not empty and adds it to the URL
       if (alcohol === "Alcoholic") {
         apiUrl += "a=Alcoholic";
       } else if (alcohol === "Non alcoholic") {
@@ -48,9 +48,9 @@ $(document).ready(function() {
       if (category !== "") {
         apiUrl += "&c=" + category;
       }
-      //fetches the api url created from criteria
+      // fetches the api url created from criteria
       fetch(apiUrl)
-      //checks if response is ok and changes response to json
+      // checks if response is ok and changes response to json
         .then(function(response) {
           if (!response.ok) {
             throw new Error(response.status);
@@ -58,18 +58,18 @@ $(document).ready(function() {
           return response.json();
         })
         .then(function(data) {
-            //empties any previous data in the results list
+            // empties any previous data in the results list
           resultsList.empty();
           //runs a function for each variable in the data.drinks array 
           data.drinks.forEach(function(drink) {
-             //creates a link item for each drink name and adds an href that goes to the description page
+             // creates a link item for each drink name and adds an href that goes to the description page
             var drinkElement = $("<div>").addClass("recommendation").text(drink.strDrink);
             drinkElement.data("id", drink.idDrink);
             resultsList.append(drinkElement);
           });
 
 
-           //grabs any item under the class recommendation and then changes the page when clicked and runs the displayDescription() for that specifc drink
+           // grabs any item under the class recommendation and then changes the page when clicked and runs the displayDescription() for that specifc drink
           $(".recommendation").on("click", function() {
             drinkId = $(this).data("id");
             $("#results-page").hide();
@@ -82,11 +82,11 @@ $(document).ready(function() {
         });
     }
 
-      //function that displays drink details
+      // function that displays drink details
     function displayDescription() {
       drinkApiUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkId;
      
-    //fetches drink details from API
+    // fetches drink details from API
       fetch(drinkApiUrl)
         .then(function(response) {
           if (!response.ok) {
