@@ -1,4 +1,3 @@
-//waits for everything to render before running the page
 $(document).ready(function() {
   //grabs HTML elements
   var searchBtn = $("#search-btn");
@@ -73,15 +72,9 @@ function displayDrink(drink) {
   changeSelection.removeClass("hidden");
   seeMore.removeClass("hidden");
 }
-});
-
-  //grabs button from HTML
-var seeMoreBtn = $("#see-more-button");
 
 //event listener for function to show youtube video
-seeMoreBtn.addEventListener("click", searchVideo);
-
-function searchVideo() {
+$("#see-more").on("click", function(drink) {
     //variables such as APIs drink name and search parameters
     var drinkName = drink.strDrink;
     var searchQuery = drinkName + "drink";
@@ -89,11 +82,10 @@ function searchVideo() {
     var youtubeApi = "https://www.googleapis.com/youtube/v3/search";
     //grabs a video based off searchQuery value and provides one result
     var params = new URLSearchParams({
-        part: "snippet",
-        q: searchQuery,
-        type: "video",
-        maxResults: 1,
-        key: youtubeApiKey
+      key: youtubeApiKey,
+      q: searchQuery,
+      type: "video",
+      maxResults: 1,
     });
     var Url = youtubeApi + "?" + params;
 
@@ -111,4 +103,6 @@ function searchVideo() {
 
         window.open(videoUrl)
     });
-}
+});
+});
+
