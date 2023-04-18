@@ -75,19 +75,29 @@ function displayDrink(drink) {
 }
 });
 
-  //creates search parameters based of selected recommendation and creates unique url
-  var searchParameters = {
-    key: youtubeApiKey,
-    q: drink.strDrink + "recipe",
-    part: "snippet",
-    type: "video",
-    maxResults: 3,
-}
-var searchUrl = youtubeApi + "?" + $.param(searchParameters);
+  //grabs button from HTML
+var seeMoreBtn = $("#see-more-button");
 
-function displayDescription(drinkId) {
-    //fetches drink details from cocktaildb
-    fetch(drinkApiUrl)
+//event listener for function to show youtube video
+seeMoreBtn.addEventListener("click", searchVideo);
+
+function searchVideo() {
+    //variables such as APIs drink name and search parameters
+    var drinkName = drink.strDrink;
+    var searchQuery = drinkName + "drink";
+    var youtubeApiKey = "AIzaSyDdGH2yyQR0S7ds9kWXfv5MZx1WefCuv6E";
+    var youtubeApi = "https://www.googleapis.com/youtube/v3/search";
+    //grabs a video based off searchQuery value and provides one result
+    var params = new URLSearchParams({
+        part: "snippet",
+        q: searchQuery,
+        type: "video",
+        maxResults: 1,
+        key: youtubeApiKey
+    });
+    var Url = youtubeApi + "?" + params;
+
+    fetch(Url) 
     .then(function(response) {
         //checks if response is ok and changes response to json
         if (!response.ok) {
@@ -95,44 +105,10 @@ function displayDescription(drinkId) {
         }
         return response.json();
     }).then(function(data) {
-        //uses api calls to manipulate data and grab the drink name the drink image and the drink instructions and drinkId for redirection accuracy
-        var drink = data.drinks[0];
-        drinkTitle.text(drink.strDrink);
-        drinkImg.attr("src", drink.strDrinkThumb);
-        drinkInstructions.text(drink.strInstructions);
+        //grabs first video and then plays that video in a new window
+        var video = data.items[0].id.videoId;
+        var videoUrl = "https://www.youtube.com/watch?v=" + video;
 
-        //fetches youtube video searches
-        fetch(searchUrl)
-        .then(function(response) {
-            //checks if response is ok and changes response to json
-            if (!response.ok) {
-                throw response.json();
-            }
-            return response.json();
-        }).then(function(data) {
-            //vraible assinged to data items gained from api data
-            var videos = data.items;
-            var videoId = video.id.videoId;
-            //runs function for each item in the videos array
-            videos.forEach(function(video) {
-                //creates a list item and a respective reference link for each item
-                var videoItem = $("<li>");
-                var videoLink = $("<a>");
-                //creates reference link based of videoId 
-                var refLink = "https://www.youtube.com/watch?v=" + videoId;
-                //grabs text of video title through data given by api 
-                videoLink.text(video.snippet.title);
-                //adds link attribute to each video title
-                videoLink.attr("href", refLink);
-                //appends the list items and links to the HTML id "youtube-list"
-                videoItem.append(videoLink);
-                youtubeList.append(videoItem)
-            });
-        });
-    });
-    //back button to switch from description page to results page
-    descriptionBackButton.on("click", function() {
-        $("description-page").hide();
-        $("results-page").show();
+        window.open(videoUrl)
     });
 }
