@@ -1,15 +1,28 @@
+:root {
+  --thistlegreen: #bcc69d;
+  --ferngreen: #4f753d;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
   }
   
   header {
-    background-color: #333;
-    color: white;
+    background-color: var(--thistlegreen);
+    color: var(--ferngreen);
+    font-family: 'Playfair Display', serif;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
     padding: 10px;
+  }
+
+  .navbar {
+    width: 35px;
+    background-color: var(--ferngreen);
+    color: var(--thistlegreen);
+    font-family: 'Alice', serif;
+
   }
   
   nav ul {
@@ -24,9 +37,7 @@ body {
   }
   
   nav a {
-    color: white;
     text-decoration: none;
-    font-weight: bold;
   }
   
   main {

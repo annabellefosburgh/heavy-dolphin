@@ -21,7 +21,7 @@ h1 {
     justify-content: flex-end;
     color: #bcc69d;
     font-size: 20px;
-    font-family: 'Patua One,' cursive;
+    font-family: 'Playfair Display', serif;
 }
 
 body {
@@ -30,7 +30,7 @@ body {
 
 .top-text {
     text-align: center;
-    font-family: 'Laila', sans-serif;
+    font-family: 'Alice', serif;
     font-size: 45px;
     line-height: 0;
     color: #bcc69d;
@@ -44,7 +44,7 @@ body {
 }
 
 #drink-name {
-    font-family: 'Laila', sans-serif;
+    font-family: 'Alice', serif;
     font-size: 45px;
     text-align: start;
 }
@@ -52,7 +52,7 @@ body {
 #drink-description {
     display: flex;
     justify-content: flex-start;
-    font-family: 'Laila', sans-serif;
+    font-family: 'Alice', serif;
     font-size: 16px;
     text-align: center;
 }

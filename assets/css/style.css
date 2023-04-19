@@ -25,12 +25,12 @@ h1 {
     justify-content: flex-end;
     color: var(--thistlegreen);
     font-size: 20px;
-    font-family: 'Patua One,' cursive;
+    font-family: 'Playfair Display', serif;
 }
 
 .headertext {
     text-align: center;
-    font-family: 'Laila', sans-serif;
+    font-family: 'Alice', serif;
     font-size: 45px;
     line-height: 0;
     color: var(--thistlegreen);
@@ -45,7 +45,7 @@ h1 {
 .type-h2 {
     display: inline-flex;
     justify-content: center;
-    font-family: 'Patua One,' cursive;
+    font-family: 'Playfair Display', serif;
     font-size: 30px;
     color: var(--ferngreen);
 }
@@ -62,7 +62,7 @@ h1 {
     border: solid 3px darkgray;
     background-color: var(--thistlegreen);
     color: var(--ferngreen);
-    font-family: 'Laila', sans-serif;
+    font-family: 'Alice', serif;
 }
 
 .dropdown {
@@ -75,10 +75,10 @@ h1 {
   }
 
 /* added to-margin */
-#search-btn {
+.search-btn {
     display: flex;
     justify-content: center;
-    font-size: 1.5em;
+    font-size: 1em;
     background-color: var(--ferngreen);
     color: var(--thistlegreen);
     margin-top: 20px;
@@ -87,7 +87,7 @@ h1 {
 /* stylesheet2.css */
 .top-text {
     text-align: center;
-    font-family: 'Laila', sans-serif;
+    font-family: 'Alice', serif;
     font-size: 45px;
     line-height: 0;
     color: #bcc69d;
@@ -103,7 +103,7 @@ h1 {
 }
 
 #drink-name {
-    font-family: 'Laila', sans-serif;
+    font-family: 'Alice', serif;
     font-size: 45px;
     text-align: start;
 }
@@ -111,7 +111,7 @@ h1 {
 #drink-description {
     display: flex;
     justify-content: flex-start;
-    font-family: 'Laila', sans-serif;
+    font-family: 'Alice', serif;
     font-size: 16px;
     text-align: center;
 }
@@ -151,5 +151,5 @@ footer {
     color: var(--thistlegreen);
     text-align: center;
     font-size: 16px;
-    font-family: 'Laila', sans-serif;
+    font-family: 'Alice', serif;
 }
