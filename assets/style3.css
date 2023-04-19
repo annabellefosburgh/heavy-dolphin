@@ -80,8 +80,8 @@ body {
   }
   
   footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--ferngreen);
+    color: var(--thistlegreen);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,8 +89,8 @@ body {
   }
   
   #Back {
-    background-color: #f44336;
-    color: white;
+    background-color: var(--ferngreen);
+    color: var(--thistlegreen);
     padding: 10px 20px;
     font-size: 18px;
     border: none;
@@ -99,6 +99,6 @@ body {
   }
   
   #Back:hover {
-    background-color: #c62828;
+    background-color: var(--thistlegreen);
   }
   
