@@ -132,5 +132,8 @@ $("#see-more").on("click", function() {
 $("#change-selection").on("click", function() {
   $("#drink-reco").addClass("hidden");
   $(".selector").show();
+  $(".headertext").text("Enter the criteria of your drink");
+  nameInput.removeClass("hidden");
+  welcomeMessage.removeClass("hidden");
 });
 });
