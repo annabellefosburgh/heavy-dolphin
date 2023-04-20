@@ -42,6 +42,8 @@ $(document).ready(function() {
     fetchDrinks(alcohol, spirit, category);
     // hides the form
     $(".selector").hide();
+    welcomeMessage.addClass("hidden");
+    nameInput.addClass("hidden")
 
   // update heading text
   heading.text("Here is your drink recommendation!");
