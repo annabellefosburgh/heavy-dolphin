@@ -1,13 +1,14 @@
 $(document).ready(function() {
-  //grabs HTML elements
+  // grabs HTML elements
   var searchBtn = $("#search-btn");
   var alcoholSelect = $("#alcohol-select");
   var spiritSelect = $("#alcohol-type");
   var categorySelect = $("#category-select");
   var changeSelection = $("#change-selection");
   var seeMore = $("#see-more");
+  var heading = $(".headertext");
 
-  //event listener for search button
+  // event listener for search button
   searchBtn.on("click", function(event) {
     event.preventDefault();
     //grabs the value selected from the drop down menu
@@ -16,11 +17,14 @@ $(document).ready(function() {
     var category = categorySelect.val();
 
     fetchDrinks(alcohol, spirit, category);
-    //hides the form
+    // hides the form
     $(".selector").hide();
+
+  // update heading text
+  heading.text("Here is your drink recommendation!");
   });
 
-  //fetches data based on criteria taken from drop down menus
+  // fetches data based on criteria taken from drop down menus
   function fetchDrinks(alcohol, spirit, category) {
     var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?";
     apiUrl += (alcohol !== "") ? "a=" + alcohol : "";
@@ -68,31 +72,31 @@ function displayDrink(drink) {
   $("#drink-image").attr("src", drink.strDrinkThumb);
   $("#drink-reco").removeClass("hidden");
 
-  // Show "Change Selection" and "See More" buttons only after the drink is displayed
+  // show "Change Selection" and "See More" buttons only after the drink is displayed
   changeSelection.removeClass("hidden");
   seeMore.removeClass("hidden");
 
 }
 
-//event listener for function to show youtube video
+// event listener for function to show youtube video
 $("#see-more").on("click", function() {
   //variables grabs drink name text and adds drink to specify search and API URL parameters
   drinkName = $("#drink-name").text()
   var searchQuery = drinkName + "drink";
   var youtubeApiKey = "AIzaSyDdGH2yyQR0S7ds9kWXfv5MZx1WefCuv6E";
   var youtubeApi = "https://www.googleapis.com/youtube/v3/search?";
-  //grabs a video based off searchQuery value and provides one result
+  // grabs a video based off searchQuery value and provides one result
   var Url = youtubeApi + "part=snippet&maxResults=1&q=" + searchQuery + "&type=video&key=" + youtubeApiKey;
 
   fetch(Url) 
   .then(function(response) {
-      //checks if response is ok and changes response to json
+      // checks if response is ok and changes response to json
       if (!response.ok) {
           throw response.json();
       }
       return response.json();
   }).then(function(data) {
-      //grabs first video and then plays that video in a new window
+      // grabs first video and then plays that video in a new window
       var video = data.items[0].id.videoId;
       var videoUrl = "https://www.youtube.com/watch?v=" + video;
 

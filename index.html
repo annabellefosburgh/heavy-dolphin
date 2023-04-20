@@ -14,18 +14,19 @@
 <body>
   <header>
     <h1>ThirstTrap</h1><br>
-    <p class="headertext">Enter the criteria for your drink</p>
+    <p class="headertext">Enter your criteria</p>
   </header>
+  <!-- form -->
   <main class="main">
     <form class="selector">
-      <!-- MC: updated options to match what's in API -->
+      <!-- select alcohol type dropdown -->
       <label for="alcohol-select" class="type-h2">Alcohol Type:</label>
       <select id="alcohol-select" class="dropdown">
         <option value="Alcoholic" class="option">Alcoholic</option>
         <option value="Non_Alcoholic" class="option">Non-Alcoholic</option>
       </select>
       <br>
-      <!-- MC: changed to spirit instead of flavor -->
+      <!-- select spirit dropdown -->
       <label for="alcohol-type" class="type-h2">Spirit:</label>
       <select id="alcohol-type" class="dropdown">
         <option value="vodka" class="option">Vodka</option>
@@ -38,7 +39,7 @@
         <option value="" class="option">Non-Alcoholic</option>
       </select>
       <br>
-      <!-- MC: changed to category instead of glass -->
+      <!-- select criteria dropdown -->
       <label for="category-select" class="type-h2">Category:</label>
       <select id="category-select" class="dropdown">
         <option value="Ordinary_Drink" class="option">Ordinary Drink</option>
@@ -48,18 +49,25 @@
         <option value="" class="option">Other/Unknown</option>
       </select>
       <br>
+      <!-- search button -->
       <button id="search-btn">Search</button>
       </form>
-    <!-- MC: added HTML2 to HTML1 -->
+    <!-- drink recommendation display -->
     <div id="drink-reco" class="hidden">
       <h2 id="drink-name"></h2>
       <p id="drink-description"></p>
       <img id="drink-image"/>
+      <!-- button to change selection -->
       <button id="change-selection" class="hidden">Change Selection</button>
+      <!-- button to see more information about drink -->
       <button id="see-more" class="hidden">See More</button>
     </div>
-  </main>     
-  <!-- MC: reference to updated js script -->
+  </main>
+  <!-- footer -->
+  <footer>
+    <br>
+    <p>Created by the Thirst Traps, 2023.</p>
+  </footer>
   <script src="./assets/mcscript.js"></script>
 </body>
 </html>
