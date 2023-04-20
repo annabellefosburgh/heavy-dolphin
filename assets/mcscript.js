@@ -38,7 +38,8 @@ $(document).ready(function() {
           var drink = data.drinks[Math.floor(Math.random() * data.drinks.length)];
           fetchDrinkById(drink.idDrink);
         } else {
-          alert("No drinks found for the selected criteria.");
+          // commenting out alert
+          // alert("No drinks found for the selected criteria.");
         }
       });
   }
@@ -55,7 +56,8 @@ function fetchDrinkById(drinkId) {
       if (data.drinks && data.drinks.length > 0) {
         displayDrink(data.drinks[0]);
       } else {
-        alert("No drink details found.");
+        // commenting out alert
+        // alert("No drink details found.");
       }
     });
 }
@@ -103,5 +105,3 @@ $("#change-selection").on("click", function() {
   $(".selector").show();
 });
 });
-
-console.log("hello");
