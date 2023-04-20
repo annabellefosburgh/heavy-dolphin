@@ -10,16 +10,22 @@ $(document).ready(function() {
   var nameInput = $("#name-input");
   var welcomeMessage = $("#welcome-message")
 
+  //grabs local storage element with key "name"
   var storedName = localStorage.getItem("name");
+  //checks if their is value for stored name and changes the text
   if(storedName) {
     welcomeMessage.text(storedName + ", welcome to ThirstTrap!");
   }
+  //when an input is entered the function runs
   nameInput.on("input", function() {
+    //grabs value of input and trims it 
     var name = nameInput.val().trim();
+    //if the input is greater than 0 it sets the local storage item with key "name" and changes text
     if (name.length > 0) {
       welcomeMessage.text(name + ", welcome to ThirstTrap!");
       localStorage.setItem("name", name);
     } else {
+      //if input is empty then it clears the name from the message and removes the item from local storage
       welcomeMessage.text("");
       localStorage.removeItem("name")
     }
