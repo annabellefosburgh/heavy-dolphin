@@ -1,4 +1,3 @@
-//waits for everything to render before running the page
 $(document).ready(function() {
   //grabs HTML elements
   var searchBtn = $("#search-btn");
@@ -72,7 +71,6 @@ function displayDrink(drink) {
   seeMore.removeClass("hidden");
 
 }
-});
 
 //event listener for function to show youtube video
 $("#see-more").on("click", function() {
@@ -105,4 +103,3 @@ $("#change-selection").on("click", function() {
   $(".selector").show();
 });
 });
-
