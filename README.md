@@ -17,7 +17,11 @@ With ThirstTrap, users can confidently make informed drink choices that align wi
 * Sources
 
 ## Link & Screenshot
-Coming soon...
+ <a href="https://annabellefosburgh.github.io/heavy-dolphin/">Deployed Github Page</a>
+ 
+<img width="1437" alt="Screen Shot 2023-04-19 at 9 48 57 PM" src="https://user-images.githubusercontent.com/124208861/233245572-31c3d049-8850-45d8-8eae-6c9f804bc93c.png">
+
+
 
 ## Repository
 You can access the repository for the ThirstTrap web application <a href="https://github.com/annabellefosburgh/heavy-dolphin">here</a>.
