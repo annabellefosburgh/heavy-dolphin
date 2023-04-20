@@ -129,6 +129,7 @@ $("#see-more").on("click", function() {
   });
 });
 
+//button for returning to main page
 $("#change-selection").on("click", function() {
   $("#drink-reco").addClass("hidden");
   $(".selector").show();
