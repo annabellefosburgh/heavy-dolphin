@@ -7,6 +7,23 @@ $(document).ready(function() {
   var changeSelection = $("#change-selection");
   var seeMore = $("#see-more");
   var heading = $(".headertext");
+  var nameInput = $("#name-input");
+  var welcomeMessage = $("#welcome-message")
+
+  var storedName = localStorage.getItem("name");
+  if(storedName) {
+    welcomeMessage.text(storedName + ", welcome to ThirstTrap!");
+  }
+  nameInput.on("input", function() {
+    var name = nameInput.val().trim();
+    if (name.length > 0) {
+      welcomeMessage.text(name + ", welcome to ThirstTrap!");
+      localStorage.setItem("name", name);
+    } else {
+      welcomeMessage.text("");
+      localStorage.removeItem("name")
+    }
+  });
 
   // event listener for search button
   searchBtn.on("click", function(event) {
