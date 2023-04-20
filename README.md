@@ -18,7 +18,8 @@ With ThirstTrap, users can confidently make informed drink choices that align wi
 
 ## Link & Screenshot
  <a href="https://annabellefosburgh.github.io/heavy-dolphin/">Deployed Github Page</a>
- https://user-images.githubusercontent.com/124208861/233245377-16628ff9-6f8f-423a-bbba-d3c22b12062c.mp4
+ 
+<img width="1437" alt="Screen Shot 2023-04-19 at 9 48 57 PM" src="https://user-images.githubusercontent.com/124208861/233245572-31c3d049-8850-45d8-8eae-6c9f804bc93c.png">
 
 
 
