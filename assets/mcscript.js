@@ -103,3 +103,5 @@ $("#change-selection").on("click", function() {
   $(".selector").show();
 });
 });
+
+console.log("hello");
